@@ -30,6 +30,7 @@
                         <li><a href="<?= base_url('/admin/berita/tambah'); ?>">Buat Berita</a></li>
                     </ul>
                 </li>
+                <li><a href="<?= base_url('/admin/pengumuman'); ?>"><i class="fa fa-bullhorn"></i> Pengumuman</a></li> 
         </ul>
         <!-- akhir dari super admin -->
         <?php } ?>
@@ -60,6 +61,7 @@
                         <li><a href="<?= base_url('/admin/kategori'); ?>">Kategori</a></li>
                     </ul>
                 </li>
+                <li><a href="<?= base_url('/admin/pengumuman'); ?>"><i class="fa fa-bullhorn"></i> Pengumuman</a></li> 
                 <li><a href="<?= base_url('/admin/video-profil'); ?>"><i class="fa fa-youtube-play"></i> Video Profil</a></li> 
                 <li><a href="<?= base_url('/admin/prestasi'); ?>"><i class="fa fa-graduation-cap"></i> Prestasi</a></li> 
                 <li><a href="<?= base_url('/admin/agenda'); ?>"><i class="fa fa-calendar"></i> Agenda</a></li> 

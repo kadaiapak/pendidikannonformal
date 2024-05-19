@@ -6,7 +6,7 @@
     <div class="">
 	<div class="page-title">
             <div class="title_left">
-                <h3>Berita</h3>
+                <h3>Pengumuman</h3>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -14,13 +14,13 @@
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Daftar berita</h2>
+                        <h2>Daftar Pengumuman</h2>
                         <div class="clearfix"></div>
                     </div>
 					
                     <div class="x_content">
 						<div>
-							<a href="<?= base_url("admin/berita/tambah"); ?>" class="btn btn-success btn-sm"><i class="fa fa-plus-square" style="margin-right: 5px;"></i>Tambah Berita</a>
+							<a href="<?= base_url("admin/pengumuman/tambah"); ?>" class="btn btn-success btn-sm"><i class="fa fa-plus-square" style="margin-right: 5px;"></i>Buat Pengumuman Baru</a>
 						</div>
 						<br>
                         <div class="row">
@@ -56,20 +56,26 @@
 										</thead>
 										<tbody>
                                         	<?php $no = 1 ?>
-											<?php foreach($semua_berita as $sb): ?>
+											<?php foreach($semuaPengumuman as $sp): ?>
 											<tr>
 												<td class=" "><?= $no; ?></td>
-												<td class=" "><?= $sb['berita_judul']; ?></td>
-												<td class=" "><?= $sb['nama_kategori']; ?></td>
-												<td class=" "><img style="width: 50px; height: 50px;" src="<?= base_url('/upload/berita_sampul/'.$sb['berita_sampul']); ?>" alt=""></td>
-												<td class=" "><?= $sb['nama_user']; ?></td>
-												<td class=" "><?= $sb['berita_tayang']; ?></td>
-												<td class=" "><?= $sb['berita_tampil'] == 1 ? "<span class='badge badge-success'>Aktif</span>" : ($sb['berita_tampil'] ==  0 ? "<span class='badge badge-warning'>Tidak Aktif</span>" : null)  ?></td>
+												<td class=" "><?= $sp['berita_judul']; ?></td>
+												<td class=" "><?= $sp['nama_kategori']; ?></td>
+												<td class=" ">
+													<?php if($sp['berita_sampul'] == null) { ?>
+													Tidak ada Gambar
+													<?php }else { ?>
+													<img style="width: 50px; height: 50px;" src="<?= base_url('/upload/berita_sampul/'.$sp['berita_sampul']); ?>" alt="">
+													<?php } ?>
+												</td>
+												<td class=" "><?= $sp['nama_user']; ?></td>
+												<td class=" "><?= $sp['berita_tayang']; ?></td>
+												<td class=" "><?= $sp['berita_tampil'] == 1 ? "<span class='badge badge-success'>Aktif</span>" : ($sp['berita_tampil'] ==  0 ? "<span class='badge badge-warning'>Tidak Aktif</span>" : null)  ?></td>
 												<td class="">
-													<a href="<?= base_url('/admin/berita/detail/'.$sb['berita_id']); ?>" class="btn btn-primary">Detail</a>
-													<a href="<?= base_url('/admin/berita/edit/'.$sb['berita_slug']); ?>" class="btn btn-warning">Ubah</a>
+													<a href="<?= base_url('/admin/pengumuman/detail/'.$sp['berita_id']); ?>" class="btn btn-primary">Detail</a>
+													<a href="<?= base_url('/admin/pengumuman/edit/'.$sp['berita_slug']); ?>" class="btn btn-warning">Ubah</a>
 													<?php if(session()->get('level') == 1) { ?>
-													<form action="<?= base_url('/admin/berita/hapus/'.$sb['berita_id']); ?>" method="post" class="d-inline">
+													<form action="<?= base_url('/admin/pengumuman/hapus/'.$sp['berita_id']); ?>" method="post" class="d-inline">
 													<?= csrf_field(); ?>
 														<input type="hidden" name="_method" value="DELETE">
 														<button type="submit" class="btn btn-danger" onclick="return confirm('yakin menu ini dihapus?')">Hapus</button>

@@ -17,26 +17,6 @@ $routes->get('/panduan-sib', 'Home::panduanSib');
 
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'adminDanSuperAdminFilter']);
 
-// ROUTE BERITA
-    // ROUTE UNTUK BERITA USER
-    $routes->get('/semua-berita', 'UserBerita::semua_berita');
-    $routes->get('/berita/(:any)', 'UserBerita::detail_berita/$1');
-    // $routes->get('/berita-beasiswa', 'UserBerita::berita_beasiswa');
-    // $routes->get('/berita-organisasi', 'UserBerita::berita_organisasi');
-    // $routes->get('/berita-prestasi', 'UserBerita::berita_prestasi');
-    // AKHIR ROUTE UNTUK BERITA USER
-
-    // ROUTE UNTUK BERITA ADMIN
-    $routes->get('admin/berita', 'Berita::index',['filter' => 'adminDanSuperAdminFilter']);
-    $routes->get('admin/berita/detail/(:any)', 'Berita::detail');
-    $routes->get('admin/berita/tambah', 'Berita::tambah',['filter' => 'adminFilter']);
-    $routes->post('admin/berita/simpan', 'Berita::simpan',['filter' => 'adminFilter']);
-    $routes->get('admin/berita/edit/(:any)', 'Berita::edit/$1' ,['filter' => 'adminDanSuperAdminFilter']);
-    $routes->post('admin/berita/update/(:any)', 'Berita::update/$1' ,['filter' => 'adminDanSuperAdminFilter']);
-    $routes->get('admin/berita/hapus/(:any)', 'Berita::hapus/$1');
-    // AHKIR ROUTE BERITA ADMIN
-// AKHIR ROUTE BERITA
-
 // ROUTE PRESTASI
     // ROUTE UNTUK PRESTASI USER
     $routes->get('/semua-prestasi', 'UserPrestasi::semua_prestasi');
@@ -229,6 +209,33 @@ $routes->post('/auth/loginProcess', 'Auth::loginProcess');
     $routes->get('halaman/(:any)', 'UserHalaman::detail_halaman/$1');
 // AKHIR DARI ROUTE UNTUK BERITA DI HOME
 
+// ROUTE BERITA
+    $routes->get('admin/berita', 'Berita::index',['filter' => 'adminDanSuperAdminFilter']);
+    $routes->get('admin/berita/detail/(:any)', 'Berita::detail/$1');
+    $routes->get('admin/berita/tambah', 'Berita::tambah',['filter' => 'adminFilter']);
+    $routes->post('admin/berita/simpan', 'Berita::simpan',['filter' => 'adminFilter']);
+    $routes->get('admin/berita/edit/(:any)', 'Berita::edit/$1' ,['filter' => 'adminDanSuperAdminFilter']);
+    $routes->post('admin/berita/update/(:any)', 'Berita::update/$1' ,['filter' => 'adminDanSuperAdminFilter']);
+    $routes->delete('admin/berita/hapus/(:any)', 'Berita::hapus/$1');
+// AKHIR ROUTE BERITA
+
+ // ROUTE UNTUK BERITA USER
+ $routes->get('/semua-berita', 'UserBerita::semua_berita');
+ $routes->get('/berita/(:any)', 'UserBerita::detail_berita/$1');
+ // $routes->get('/berita-beasiswa', 'UserBerita::berita_beasiswa');
+ // $routes->get('/berita-organisasi', 'UserBerita::berita_organisasi');
+ // $routes->get('/berita-prestasi', 'UserBerita::berita_prestasi');
+ // AKHIR ROUTE UNTUK BERITA USER
+
+ // ROUTE PENGUMUMAN
+ $routes->get('admin/pengumuman', 'Pengumuman::index',['filter' => 'adminDanSuperAdminFilter']);
+ $routes->get('admin/pengumuman/detail/(:any)', 'Pengumuman::detail/$1');
+ $routes->get('admin/pengumuman/tambah', 'Pengumuman::tambah',['filter' => 'adminFilter']);
+ $routes->post('admin/pengumuman/simpan', 'Pengumuman::simpan',['filter' => 'adminFilter']);
+ $routes->get('admin/pengumuman/edit/(:any)', 'Pengumuman::edit/$1' ,['filter' => 'adminDanSuperAdminFilter']);
+ $routes->post('admin/pengumuman/update/(:any)', 'Pengumuman::update/$1' ,['filter' => 'adminDanSuperAdminFilter']);
+ $routes->delete('admin/pengumuman/hapus/(:any)', 'Pengumuman::hapus/$1');
+// AKHIR ROUTE PENGUMUMAN
 
     
 

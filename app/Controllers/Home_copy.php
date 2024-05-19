@@ -48,6 +48,35 @@ class Home extends BaseController
         return view('home/v_home', $data);
     }
 
+    public function profilDitmawa()
+    {
+        $data = [
+            'judul' => 'Profil Direktorat Kemahasiswaan',
+        ];
+
+        return view('home/v_profil_ditmawa', $data);
+    }
+
+    public function strukturOrganisasi()
+    {
+        $data = [
+            'judul' => 'Struktur Organisasi',
+        ];
+
+        return view('home/v_struktur_organisasi', $data);
+    }
+
+    public function unitKegiatan()
+    {
+        $semuaUnit = $this->ukormawaModel->getAll();
+        $data = [
+            'judul' => 'Unit Kegiatan',
+            'semuaUnit' => $semuaUnit,
+        ];
+
+        return view('home/v_unit_kegiatan', $data);
+    }
+
     public function semuaPrestasi()
     {
         $data = [
@@ -56,4 +85,23 @@ class Home extends BaseController
 
         return view('home/v_semua_prestasi', $data);
     }
+
+    public function panduanBebasUkt()
+    {
+        $data = [
+            'judul' => 'Panduan Bebas UKT',
+        ];
+
+        return view('home/v_panduan_bebas_ukt', $data);
+    }
+
+    public function panduanSib()
+    {
+        $data = [
+            'judul' => 'Panduan Sistem Informasi Beasiswa',
+        ];
+
+        return view('home/v_panduan_sib', $data);
+    }
+  
 }

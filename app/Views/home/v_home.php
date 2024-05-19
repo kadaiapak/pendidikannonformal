@@ -108,7 +108,8 @@
         </div>
     <!-- Akhir Banner PNF -->
 
-    <!-- Berita Penting PNF -->
+    <?php if($penting_berita != null) { ?>
+        <!-- Berita Penting PNF -->
     <div id="blog" class="blog-area"><br><br>
         <div class="container">
             <div class="row">
@@ -152,6 +153,7 @@
         </div>
     </div>
     <!-- Akhir Berita Utama PNF -->
+    <?php } ?>
 
     <!-- Berita Umum -->
     <div class="about-area">

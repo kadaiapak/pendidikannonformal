@@ -102,7 +102,6 @@ class BeritaModel extends Model
         if($limit){
             $builder->limit($limit);
         }
-        $builder->orderBy('created_at','DESC');
         $result = $builder->get();
         return $result->getResultArray();
     }
@@ -153,4 +152,64 @@ class BeritaModel extends Model
         $result = $builder->get();
         return $result->getRowArray();
     }
+
+    // public function getAll($limit = null, $berita_kategori = null)
+    // {
+    //     $builder = $this->db->table('berita');
+    //     $builder->select('berita.*, user.nama_asli as nama_user');
+    //     if($limit){
+    //         $builder->limit($limit);
+    //     }
+    //     if($berita_kategori){
+    //         $builder->where('berita_subkategori', $berita_kategori);
+    //     }
+    //     $builder->where('berita_tampil', 1);
+    //     $builder->join('user', 'berita.berita_penulis = user.user_id');
+    //     $result = $builder->get();
+    //     return $result->getResultArray();
+    // }
+
+    // public function getAllBeritaBeasiswa($limit = 4){
+    //     $builder = $this->db->table('berita');
+    //     $builder->select('berita.*, user.nama_asli as nama_user');
+    //     $builder->where('berita_kategori', 1);
+    //     $builder->where('berita_tampil', 1);
+    //     $builder->join('user', 'berita.berita_penulis = user.user_id');
+    //     if($limit){
+    //         $builder->limit($limit);
+    //     }
+    //     $result = $builder->get();
+    //     return $result->getResultArray();
+    // }
+
+    // public function getAllBeritaPrestasi($limit = 4){
+    //     $builder = $this->db->table('berita');
+    //     $builder->select('berita.*, user.nama_asli as nama_user');
+    //     $builder->where('berita_kategori', 1);
+    //     $builder->where('berita_tampil', 1);
+    //     $builder->join('user', 'berita.berita_penulis = user.user_id');
+    //     if($limit){
+    //         $builder->limit($limit);
+    //     }
+    //     $result = $builder->get();
+    //     return $result->getResultArray();
+    // }
+
+    // public function getAllBeritaOrganisasi($limit = 4){
+    //     $builder = $this->db->table('berita');
+    //     $builder->select('berita.*, user.nama_asli as nama_user');
+    //     $builder->where('berita_kategori', 1);
+    //     $builder->where('berita_tampil', 1);
+    //     $builder->join('user', 'berita.berita_penulis = user.user_id');
+    //     if($limit){
+    //         $builder->limit($limit);
+    //     }
+    //     $result = $builder->get();
+    //     return $result->getResultArray();
+    // }
+    
+
+
+   
+    
 }
