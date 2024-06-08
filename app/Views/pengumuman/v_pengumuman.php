@@ -44,13 +44,13 @@
 										<thead>
 											<tr class="headings">
 												<th class="column-title">No </th>
-												<th class="column-title">Judul Berita </th>
-												<th class="column-title">Kategori </th>
-												<th class="column-title">Sampul</th>
-												<th class="column-title">Penulis</th>
-												<th class="column-title">Tayang</th>
+												<th class="column-title">Tanggal </th>
+												<th class="column-title" style="text-align: center;">Judul Berita </th>
+												<th class="column-title" style="text-align: center;">Sampul</th>
+												<th class="column-title" style="text-align: center;">Penulis</th>
+												<th class="column-title" style="text-align: center;">Tayang</th>
 												<th class="column-title">Tampil</th>
-												<th class="column-title no-link last"><span class="nobr">Aksi</span>
+												<th class="column-title no-link last" style="text-align: center;"><span class="nobr">Aksi</span>
 												</th>
 											</tr>
 										</thead>
@@ -59,8 +59,8 @@
 											<?php foreach($semuaPengumuman as $sp): ?>
 											<tr>
 												<td class=" "><?= $no; ?></td>
+												<td class=" "><?= tanggal_indo($sp['created_at']) ?></td>
 												<td class=" "><?= $sp['berita_judul']; ?></td>
-												<td class=" "><?= $sp['nama_kategori']; ?></td>
 												<td class=" ">
 													<?php if($sp['berita_sampul'] == null) { ?>
 													Tidak ada Gambar
@@ -72,8 +72,8 @@
 												<td class=" "><?= $sp['berita_tayang']; ?></td>
 												<td class=" "><?= $sp['berita_tampil'] == 1 ? "<span class='badge badge-success'>Aktif</span>" : ($sp['berita_tampil'] ==  0 ? "<span class='badge badge-warning'>Tidak Aktif</span>" : null)  ?></td>
 												<td class="">
-													<a href="<?= base_url('/admin/pengumuman/detail/'.$sp['berita_id']); ?>" class="btn btn-primary">Detail</a>
-													<a href="<?= base_url('/admin/pengumuman/edit/'.$sp['berita_slug']); ?>" class="btn btn-warning">Ubah</a>
+													<a href="<?= base_url('/admin/pengumuman/detail/'.$sp['berita_id']); ?>" class="btn btn-primary"><i class="fa fa-file-text-o" style="margin-right: 5px;"></i>Detail</a>
+													<a href="<?= base_url('/admin/pengumuman/edit/'.$sp['berita_slug']); ?>" class="btn btn-warning"><i class="fa fa-edit" style="margin-right: 5px;"></i>Ubah</a>
 													<?php if(session()->get('level') == 1) { ?>
 													<form action="<?= base_url('/admin/pengumuman/hapus/'.$sp['berita_id']); ?>" method="post" class="d-inline">
 													<?= csrf_field(); ?>

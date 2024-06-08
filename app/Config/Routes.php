@@ -8,12 +8,8 @@ use CodeIgniter\Router\RouteCollection;
 
 //  route untuk home
 $routes->get('/', 'Home::index');
-$routes->get('/profil-ditmawa', 'Home::profilDitmawa');
-$routes->get('/struktur-organisasi', 'Home::strukturOrganisasi');
-$routes->get('/unit-kegiatan', 'Home::unitKegiatan');
 $routes->get('/semua-prestasi', 'Home::semuaPrestasi');
-$routes->get('/panduan-bebas-ukt', 'Home::panduanBebasUkt');
-$routes->get('/panduan-sib', 'Home::panduanSib');
+$routes->get('/pendidikan-non-formal-s2', 'Home::s_dua');
 
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'adminDanSuperAdminFilter']);
 
@@ -206,6 +202,10 @@ $routes->post('/auth/loginProcess', 'Auth::loginProcess');
 // AKHIR ROUTE BERITA
 
 // ROUTE UNTUK BERITA DI HOME
+// route untuk sdm
+    $routes->get('/sdm/detail/(:num)', 'UserSdm::detail_sdm/$1');
+    $routes->get('halaman/sdm', 'UserSdm::semua_sdm');
+// akhir route untuk sdm
     $routes->get('halaman/(:any)', 'UserHalaman::detail_halaman/$1');
 // AKHIR DARI ROUTE UNTUK BERITA DI HOME
 
@@ -237,6 +237,22 @@ $routes->post('/auth/loginProcess', 'Auth::loginProcess');
  $routes->delete('admin/pengumuman/hapus/(:any)', 'Pengumuman::hapus/$1');
 // AKHIR ROUTE PENGUMUMAN
 
+// ROUTE UNTUK MASTER DATA DOSEN
+    // diakses oleh admin dan superadmin 
+    $routes->get('/admin/master-dosen', 'MasterDosen::index', ['filter' => 'adminDanSuperAdminFilter' ]);
+    $routes->get('/admin/master-dosen/detail/(:num)', 'MasterDosen::detail/$1', ['filter' => 'adminDanSuperAdminFilter']);
+    $routes->get('/admin/master-dosen/edit/(:num)', 'MasterDosen::edit/$1', ['filter' => 'adminDanSuperAdminFilter']);
+    $routes->post('/admin/master-dosen/update/(:num)', 'MasterDosen::update/$1', ['filter' => 'adminDanSuperAdminFilter']);
+    $routes->get('/admin/master-dosen/tambah', 'MasterDosen::tambah', ['filter' => 'adminDanSuperAdminFilter']);
+    $routes->post('/admin/master-dosen/simpan', 'MasterDosen::simpan', ['filter' => 'adminDanSuperAdminFilter']);
+// AKHIR DARI MASTER DATA DOSEN
+
+// ROUTE UNTUK PENGATURAN MASTER DOSEN
+    // diakses oleh admin dan superadmin 
+    $routes->get('/admin/master-dosen/pengaturan', 'MasterDosen::pengaturan', ['filter' => 'adminDanSuperAdminFilter' ]);
+    $routes->get('/admin/master-dosen/pengaturan/edit/(:num)', 'MasterDosen::pengaturan_edit/$1', ['filter' => 'adminDanSuperAdminFilter']);
+    $routes->post('/admin/master-dosen/pengaturan/update/(:num)', 'MasterDosen::pengaturan_update/$1', ['filter' => 'adminDanSuperAdminFilter']);
+// AKHIR DARI MASTER DATA DOSEN
     
 
 

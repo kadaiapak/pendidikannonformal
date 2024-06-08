@@ -10,27 +10,34 @@
             <br />
             <h3>Halaman</h3>
             <br />
-            <li><a href="<?= base_url('/admin/menu'); ?>"><i class="fa fa-university"></i> Kategori Halaman</a></li>
-            <li><a href="<?= base_url('/admin/halaman'); ?>"><i class="fa fa-university"></i> Halaman</a></li>
+            <li><a><i class="fa fa-list"></i>  Halaman <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="<?= base_url('/admin/halaman'); ?>"> Halaman</a></li>
+                        <li><a href="<?= base_url('/admin/menu'); ?>"> Kategori Halaman</a></li>
+                    </ul>
+                </li>
+            <br />
+            <h3>Post</h3>
+            <br />
+            <li>
+                <a><i class="fa fa-book"></i>  Berita <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="<?= base_url('/admin/berita'); ?>"> Berita</a></li>
+                    <li><a href="<?= base_url('/admin/kategori'); ?>">Kategori Berita</a></li>
+                </ul>
+            </li>
+            <li><a href="<?= base_url('/admin/pengumuman'); ?>"><i class="fa fa-bullhorn"></i> Pengumuman</a></li> 
             <br />
             <h3>Pengaturan</h3>
             <br />
-            <li><a><i class="fa fa-gear"></i> User <span class="fa fa-chevron-down"></span></a>
+            <li>
+                <a><i class="fa fa-gear"></i> User <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="<?= base_url('/user_level'); ?>">User Level</a></li>
                     <li><a href="<?= base_url('/user'); ?>">User</a></li>
                 </ul>
             </li>
             <br />
-                <h3>Post</h3>
-                <br />
-                <li><a><i class="fa fa-book"></i>  Berita <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="<?= base_url('/admin/berita'); ?>"> Berita</a></li>
-                        <li><a href="<?= base_url('/admin/berita/tambah'); ?>">Buat Berita</a></li>
-                    </ul>
-                </li>
-                <li><a href="<?= base_url('/admin/pengumuman'); ?>"><i class="fa fa-bullhorn"></i> Pengumuman</a></li> 
         </ul>
         <!-- akhir dari super admin -->
         <?php } ?>
@@ -41,32 +48,43 @@
                 <h3>General</h3>
                 <br />
                 <li><a href="<?= base_url('/dashboard'); ?>"><i class="fa fa-home"></i> Dashboard</a></li>
+                <li><a><i class="fa fa-user"></i> Dosen <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="<?= base_url('/admin/master-dosen'); ?>">Semua Dosen</a></li>
+                        <li><a href="<?= base_url('/admin/master-dosen/pengaturan'); ?>">Pengaturan Tambahan</a></li>
+                    </ul>
+                </li>
                 <br />
                 <h3>Halaman</h3>
-                <li><a href="<?= base_url('/admin/menu'); ?>"><i class="fa fa-university"></i> Kategori Halaman</a></li> 
-                <li><a href="<?= base_url('/admin/halaman'); ?>"><i class="fa fa-university"></i> Halaman</a></li>
                 <br />
-                <h3>Pengaturan</h3>
-                <br />
-                <li><a href="<?= base_url('/admin/visi-misi'); ?>"><i class="fa fa-university"></i> Visi Misi</a></li> 
-                <li><a href="<?= base_url('/admin/grafik-mahasiswa'); ?>"><i class="fa fa-bar-chart"></i> Grafik Mahasiswa</a></li> 
+                <li><a><i class="fa fa-list"></i>  Halaman <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="<?= base_url('/admin/halaman'); ?>"> Halaman</a></li>
+                        <li><a href="<?= base_url('/admin/menu'); ?>"> Kategori Halaman</a></li>
+                    </ul>
+                </li>
                 <br />
                 <h3>Post</h3>
                 <br />
                 <li><a href="<?= base_url('/penyimpanan-gambar'); ?>"><i class="fa fa-photo"></i> Penyimpanan Gambar</a></li>
                 <li><a><i class="fa fa-book"></i>  Berita <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+                        <li><a href="<?= base_url('/admin/kategori'); ?>">Kategori Berita</a></li>
                         <li><a href="<?= base_url('/admin/berita'); ?>"> Berita</a></li>
-                        <li><a href="<?= base_url('/admin/berita/tambah'); ?>">Buat Berita</a></li>
-                        <li><a href="<?= base_url('/admin/kategori'); ?>">Kategori</a></li>
                     </ul>
                 </li>
                 <li><a href="<?= base_url('/admin/pengumuman'); ?>"><i class="fa fa-bullhorn"></i> Pengumuman</a></li> 
-                <li><a href="<?= base_url('/admin/video-profil'); ?>"><i class="fa fa-youtube-play"></i> Video Profil</a></li> 
                 <li><a href="<?= base_url('/admin/prestasi'); ?>"><i class="fa fa-graduation-cap"></i> Prestasi</a></li> 
-                <li><a href="<?= base_url('/admin/agenda'); ?>"><i class="fa fa-calendar"></i> Agenda</a></li> 
                 <li><a href="<?= base_url('/admin/download'); ?>"><i class="fa fa-file-pdf-o"></i> Download</a></li>
+                <br />
+                <h3>Pengaturan</h3>
+                <br />
+                <li><a href="<?= base_url('/admin/visi-misi'); ?>"><i class="fa fa-university"></i> Visi Misi</a></li> 
+                <li><a href="<?= base_url('/admin/grafik-mahasiswa'); ?>"><i class="fa fa-bar-chart"></i> Grafik Mahasiswa</a></li> 
+                <li><a href="<?= base_url('/admin/video-profil'); ?>"><i class="fa fa-youtube-play"></i> Video Profil</a></li> 
+                <li><a href="<?= base_url('/admin/agenda'); ?>"><i class="fa fa-calendar"></i> Agenda</a></li> 
                 <li><a href="<?= base_url('/admin/ukormawa'); ?>"><i class="fa fa-group"></i> Unit Kegiatan / Ormawa</a></li>
+                <br />
             </ul>
             <!-- akhir dari admin -->
         <?php } ?>

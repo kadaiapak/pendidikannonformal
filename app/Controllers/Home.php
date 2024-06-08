@@ -48,6 +48,24 @@ class Home extends BaseController
         return view('home/v_home', $data);
     }
 
+    public function s_dua()
+    {
+        $tanggal_diproses_admin = date('Y-m-d H:i:s');
+        $data = [
+            'kunjungan_nama' => $tanggal_diproses_admin
+        ];
+        $this->kunjunganModel->insert($data);
+        $pengumumanBerita = $this->beritaModel->getAllBeritaPengumuman($limit = 5);
+        $visiMisi = $this->pengaturanModel->getVisiMisi();
+        $data = [
+            'judul' => 'Pendidikan Non Formal S2',
+            'pengumuman_berita' => $pengumumanBerita,
+            'visi_misi' => $visiMisi,
+        ];
+
+        return view('home/v_home_s_dua', $data);
+    }
+
     public function semuaPrestasi()
     {
         $data = [

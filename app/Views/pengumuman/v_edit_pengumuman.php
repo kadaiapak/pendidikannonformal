@@ -4,7 +4,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Berita</h3>
+                <h3>Pengumuman</h3>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -14,7 +14,7 @@
                 <?= csrf_field(); ?>
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Edit Berita</h2>
+                        <h2>Edit Pengumuman</h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -22,7 +22,7 @@
                         <input type="hidden" name="berita_sampul_lama" value="<?= $detailPengumuman['berita_sampul']; ?>">
                         <input type="hidden" name="berita_judul_lama" value="<?= $detailPengumuman['berita_judul']; ?>">
                         <div class="form-group">
-                            <label for="berita_sampul" class="file-label">Sampul <b>(ukuran sampul harus berukuran 1500px X 700px)</b></label>
+                            <label for="berita_sampul" class="file-label">Sampul <b>(boleh dikosongkan max 1024kb/1Mb)</b></label>
                             <input accept="image/*" class="form-control <?= validation_show_error('berita_sampul') ? 'is-invalid' : null; ?>" type="file" id="berita_sampul" name="berita_sampul">
                             <div class="invalid-feedback" style="text-align: left;">
                                 <?= validation_show_error('berita_sampul'); ?>
@@ -50,8 +50,8 @@
                             <label for="berita_tampil"><b>Terbitkan Berita * :</b></label>
                             <select id="berita_tampil" name="berita_tampil" class="form-control" required>
                                 <option value="">-- Pilih --</option>
-                                <option value="1" <?= $detailPengumuman['berita_tampil'] == 1 ? "selected" : null ?>>Ya, Terbitkan</option>
-                                <option value="0" <?= $detailPengumuman['berita_tampil'] == 2 ? "selected" : null ?>>Tidak, Jangan terbitkan dulu</option>
+                                <option value="1" <?= old('berita_tampil') && old('berita_tampil') == 1 ? "selected" : ($detailPengumuman['berita_tampil'] == 1 ? "selected" : null);  ?>>Ya, Terbitkan</option>
+                                <option value="0" <?= old('berita_tampil') && old('berita_tampil') == 0 ? "selected" : ($detailPengumuman['berita_tampil'] == 0 ? "selected" : null);  ?>>Tidak, Jangan terbitkan dulu</option>
                             </select>
                             <div class="invalid-feedback" style="text-align: left;">
                                 <?= validation_show_error('berita_tampil'); ?>
@@ -60,7 +60,7 @@
                         <div class="ln_solid"></div>
                         <div class="form-group">
                             <div class="col-md-9 col-sm-9  offset-md-3">
-                                <a href="<?= base_url('/admin/berita'); ?>" class="btn btn-warning btn-sm"><i class="fa fa-chevron-circle-left" style="margin-right: 5px;"></i>Kembali</a>
+                                <a href="<?= base_url('/admin/pengumuman'); ?>" class="btn btn-warning btn-sm"><i class="fa fa-chevron-circle-left" style="margin-right: 5px;"></i>Kembali</a>
                                 <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save" style="margin-right: 5px;"></i>Simpan</button>
                             </div>
                         </div>

@@ -66,6 +66,7 @@ class BeritaModel extends Model
         }
         $builder->join('user', 'berita.berita_penulis = user.user_id');
         $builder->join('kategori', 'berita.berita_kategori = kategori.kategori_id');
+        $builder->orderBy('berita_id', 'DESC');
         $result = $builder->get();
         return $result->getResultArray();
     }

@@ -143,7 +143,7 @@
                                         <a href="index.html">S1 Pendidikan Non Formal</a>
                                     </li>
                                     <li>
-                                        <a href="index-2-onepage.html">S2 Pendidikan Non Formal</a>
+                                        <a href="<?= base_url('/pendidikan-non-formal-s2'); ?>">S2 Pendidikan Non Formal</a>
                                     </li>
                                 </ul>
                             </li>

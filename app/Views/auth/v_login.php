@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SIPS | Login</title>
+    <title>PNF | Login</title>
 
     <!-- Bootstrap -->
     <link href="<?= base_url()?>template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
             <?= csrf_field(); ?>
               <h1>Silahkan Login</h1>
               <div>
-                <input type="text" class="form-control <?= validation_show_error('username') ?  'is-invalid' : null; ?>"  <?= validation_show_error("username") ? "style=border-color:red;margin-bottom:0;" : null; ?>  placeholder="Username/ NIM"  name="username"/>
+                <input type="text" class="form-control <?= validation_show_error('username') ?  'is-invalid' : null; ?>"  <?= validation_show_error("username") ? "style=border-color:red;margin-bottom:0;" : null; ?>  placeholder="Username"  name="username"/>
                 <div class="invalid-feedback" style="text-align: left;">
                   <?= validation_show_error('username'); ?>
                 </div>
@@ -69,7 +69,7 @@
 
                 <div>
                   <img src="<?=base_url('template/');?>src/img/unpkopsuratm.jpg" alt="logo" width="50" class="shadow-light rounded-circle mb-1 mt-2" >
-                  <h1>Sistem Informasi Pendaftaran Skripsi</h1>
+                  <h1>Pendidikan Non Formal</br> FIP UNP</h1>
                 </div>
               </div>
             </form>
