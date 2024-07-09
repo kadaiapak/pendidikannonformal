@@ -61,3 +61,7 @@ Langkah - langkah
 
 Yang dilakukan
 1. Membuat fitur pengajuan surat oleh mahasiswa
+
+Progress Penambahan Aplikasi
+1. 09 Juli 2024 Menambahkan fitur delete dosen beserta foto
+ 

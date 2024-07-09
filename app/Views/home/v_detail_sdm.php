@@ -83,7 +83,10 @@
                                             Homebase <span><?= $detailDosen['home_base']; ?></span>
                                         </li>
                                         <li>
-                                            Tempat Tanggal Lahir <span><?= $detailDosen['peg_tmp_lahir']; ?> <?= tanggal_indo($detailDosen['peg_tgl_lahir']); ?></span>
+                                            Tempat Lahir <span><?= $detailDosen['peg_tmp_lahir']; ?></span>
+                                        </li>
+                                        <li>
+                                            Tanggal Lahir <span><?= tanggal_indo($detailDosen['peg_tgl_lahir']); ?></span>
                                         </li>
                                         <li>
                                             Jenis Kelamin <span><?= $detailDosen['peg_sex'] == 'L' ? 'Laki - laki' : ($detailDosen['peg_sex'] == 'P' ? 'Perempuan' : null); ?></span>

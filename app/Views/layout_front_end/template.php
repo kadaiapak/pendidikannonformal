@@ -140,10 +140,21 @@
                                 <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Beranda</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.html">S1 Pendidikan Non Formal</a>
+                                        <a href="<?= base_url('/'); ?>">S1 Pendidikan Non Formal</a>
                                     </li>
                                     <li>
                                         <a href="<?= base_url('/pendidikan-non-formal-s2'); ?>">S2 Pendidikan Non Formal</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Informasi</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="<?= base_url('/semua-berita'); ?>">Berita</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url('/semua-pengumuman'); ?>">Pengumuman</a>
                                     </li>
                                 </ul>
                             </li>
@@ -297,7 +308,7 @@
                 <div class="f-items">
                     <div class="col-md-4 item">
                         <div class="f-item">
-                            <img src="assets/img/logopnfwhite.png" alt="Logo">
+                            <img src="<?= base_url('/template_front_end/assets/img/logopnfwhite.png'); ?>" alt="Logo">
                             <p>
                                 Pogram Studi Pendidikan Non Formal Pakultas Ilmu Pendidikan Adalah Excellence decisively nay man yet impression for contrasted remarkably. There
                                 spoke happy for you are out. Fertile how old address did showing because sitting

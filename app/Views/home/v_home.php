@@ -374,7 +374,7 @@
     <!-- End Why Chose Us -->
 
     <!-- Prestasi ============================================= -->
-    <!-- <div class="popular-courses bg-gray circle carousel-shadow default-padding">
+    <div class="popular-courses bg-gray circle carousel-shadow default-padding">
         <div class="container">
             <div class="row">
                 <div class="site-heading text-center">
@@ -399,21 +399,11 @@
                                 </a>
                             </div>
                             <div class="info">
-                                <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="<?= base_url('/prestasi/'.$p['prestasi_slug']); ?>"><img src="<?= base_url('upload/prestasi/'.$p['prestasi_sampul']); ?>" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="<?= base_url('/prestasi/'.$p['prestasi_slug']); ?>">Dion Laloc</a>
-                                        <div class="rating">
-                                            <span><?= $p['prestasi_peringkat']; ?></span>
-                                        </div>
-                                    </div>
-                                </div>
                                 <h4>
                                     <a href="<?= base_url('/prestasi/'.$p['prestasi_slug']); ?>"><?= $p['prestasi_judul']; ?></a>
                                 </h4>
-                                <?= $p['prestasi_deskripsi']; ?>
+                                <?php $remove_tag = strip_tags($p['prestasi_deskripsi']); ?>
+                                <?= substr($remove_tag,0,300) ?> ... 
                                 <div class="bottom-info">
                                     <ul>
                                         <li>
@@ -433,7 +423,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Akhir Prestasi -->
 
     <!-- Grafik Angkat -->
