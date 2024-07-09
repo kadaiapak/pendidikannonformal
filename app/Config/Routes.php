@@ -30,6 +30,7 @@ $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'adminDanSuperAdminF
     $routes->post('admin/prestasi/update/(:any)', 'Prestasi::update/$1' ,['filter' => 'adminDanSuperAdminFilter']);
     $routes->get('admin/prestasi/edit-header', 'Prestasi::edit_header' ,['filter' => 'adminDanSuperAdminFilter']);
     $routes->post('admin/prestasi/update-header-prestasi', 'Prestasi::update_header_prestasi' ,['filter' => 'adminDanSuperAdminFilter']);
+    $routes->delete('/admin/prestasi/hapus/(:num)', 'Prestasi::hapus/$1', ['filter' => 'adminDanSuperAdminFilter']);
     // $routes->get('admin/berita/detail/(:any)', 'Berita::detail');
     // $routes->get('admin/berita/hapus/(:any)', 'Berita::hapus/$1');
     // AHKIR ROUTE PRESTASI ADMIN

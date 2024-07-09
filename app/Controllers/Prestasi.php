@@ -327,9 +327,18 @@ class Prestasi extends BaseController
         return redirect()->to('/admin/prestasi')->with('sukses','Data berhasil diubah!');
     }
 
-    // public function hapus()
-    // {
-    //     $this->prestasiModel->delete();
-    //     return redirect()->to('/admin/berita')->with('sukses','Data berhasil dihapus!');
-    // }
+    public function hapus($id)
+    {
+        $prestasiSampul = $this->prestasiModel->prestasiSampul($id);
+        $prestasiSertifikat = $this->prestasiModel->prestasiSertifikat($id);
+
+        if($prestasiSertifikat['prestasi_sertifikat'] != null){
+            unlink('upload/prestasi/'.$prestasiSertifikat['prestasi_sertifikat']);
+        }
+        if($prestasiSampul['prestasi_sampul'] != null){
+            unlink('upload/prestasi/'.$prestasiSampul['prestasi_sampul']);
+        }
+        $this->prestasiModel->delete($id);
+        return redirect()->to('/admin/prestasi')->with('sukses','Data berhasil dihapus!');
+    }
 }

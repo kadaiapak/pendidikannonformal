@@ -67,6 +67,9 @@
                                         </div>
                                     </div>
                                     <?= $detailPrestasi['prestasi_deskripsi']; ?>
+                                    <div class="image_contaner" style="width: 100%; height: 400px;">
+                                        <img style="object-fit: cover; height: 100%; width: 100%;" src="<?= base_url('/upload/prestasi/'.$detailPrestasi['prestasi_sertifikat']); ?>" alt="Thumb">
+                                    </div>  
                                 </div>
                                 
                                 <!-- <div class="post-pagi-area">

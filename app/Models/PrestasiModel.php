@@ -114,5 +114,22 @@ class PrestasiModel extends Model
         $result = $builder->get();
         return $result->getRowArray();
     }
-    
+
+    public function prestasiSampul($id = null)
+    {
+        $builder = $this->db->table('prestasi');
+        $builder->select('prestasi_sampul');
+        $builder->where('prestasi_id', $id);
+        $result = $builder->get();
+        return $result->getRowArray();
+    }
+
+    public function prestasiSertifikat($id = null)
+    {
+        $builder = $this->db->table('prestasi');
+        $builder->select('prestasi_sertifikat');
+        $builder->where('prestasi_id', $id);
+        $result = $builder->get();
+        return $result->getRowArray();
+    }
 }

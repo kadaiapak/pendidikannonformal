@@ -92,12 +92,12 @@
 												<td class=" "><?= $sp['prestasi_nama']; ?></td>
 												<td class=" "><?= $sp['nama_departemen']; ?></td>
 												<td class="">
+													<form action="<?= base_url('/admin/prestasi/hapus/'.$sp['prestasi_id']); ?>" method="post" class="d-inline">
+                                                        <?= csrf_field(); ?>
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('yakin menu ini dihapus?')"><i class="fa fa-trash-o" style="margin-right: 5px;"></i>Hapus</button>
+                                                    </form>
 													<a href="<?= base_url('/admin/prestasi/edit/'.$sp['prestasi_slug']); ?>" class="btn btn-warning">Ubah</a>
-													<?php if(session()->get('level') == 1) { ?>
-														<a href="<?= base_url('/admin/prestasi/hapus/'.$sp['prestasi_id']); ?>" class="btn btn-danger">Hapus</a>
-													<?php }else { ?>
-														<a href="<?= base_url('/admin/prestasi/hapus/'.$sp['prestasi_id']); ?>" class="btn btn-danger">Permintaan Hapus</a>
-													<?php } ?>
 												</td>
 												<?php $no++ ?>
 											</tr>
