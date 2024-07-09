@@ -374,7 +374,7 @@
     <!-- End Why Chose Us -->
 
     <!-- Prestasi ============================================= -->
-    <div class="popular-courses bg-gray circle carousel-shadow default-padding">
+    <!-- <div class="popular-courses bg-gray circle carousel-shadow default-padding">
         <div class="container">
             <div class="row">
                 <div class="site-heading text-center">
@@ -391,7 +391,7 @@
                     <div
                         class="popular-courses-items popular-courses-carousel owl-carousel owl-theme">
                         <?php foreach ($prestasi as $p) { ?>
-                        <!-- Single Item -->
+                        <?= "Single Item"; ?> 
                         <div class="item">
                             <div class="thumb">
                                 <a href="<?= base_url('/prestasi/'.$p['prestasi_slug']); ?>">
@@ -423,18 +423,17 @@
                                                 ?>
                                                 <?= $tanggal_prestasi; ?></span>
                                         </li>
-                                        
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Item -->
+                        <?= "<!-- End Single Item -->"; ?>
                         <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Akhir Prestasi -->
 
     <!-- Grafik Angkat -->
@@ -513,7 +512,7 @@
                         <!-- Single Item -->
                         <div class="item">
                             <div class="col-md-5 thumb">
-                                <img src="assets/img/800x800.png" alt="Thumb">
+                                <img src="" alt="Thumb">
                             </div>
                             <div class="col-md-7 info">
                                 <p>
@@ -529,7 +528,7 @@
                         <!-- Single Item -->
                         <div class="item">
                             <div class="col-md-5 thumb">
-                                <img src="assets/img/800x800.png" alt="Thumb">
+                                <img src="" alt="Thumb">
                             </div>
                             <div class="col-md-7 info">
                                 <p>
@@ -545,7 +544,7 @@
                         <!-- Single Item -->
                         <div class="item">
                             <div class="col-md-5 thumb">
-                                <img src="assets/img/800x800.png" alt="Thumb">
+                                <img src=" alt="Thumb">
                             </div>
                             <div class="col-md-7 info">
                                 <p>
@@ -561,7 +560,7 @@
                         <!-- Single Item -->
                         <div class="item">
                             <div class="col-md-5 thumb">
-                                <img src="assets/img/800x800.png" alt="Thumb">
+                                <img src="" alt="Thumb">
                             </div>
                             <div class="col-md-7 info">
                                 <p>
@@ -596,34 +595,34 @@
                 <div class="col-md-8 clients">
                     <div class="clients-items owl-carousel owl-theme text-center">
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/oxford.jpg" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/london.jpg" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/singapure.jpg" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/utm.jpg" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/chicago.jpg" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/qs.webp" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/utm2.png" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/ukm.png" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/korea.png" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                         <div class="single-item">
-                            <a href="#"><img src="assets/img/seoul.png" alt="Clients"></a>
+                            <a href="#"><img src="" alt="Clients"></a>
                         </div>
                     </div>
                 </div>

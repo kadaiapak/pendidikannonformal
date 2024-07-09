@@ -245,6 +245,7 @@ $routes->post('/auth/loginProcess', 'Auth::loginProcess');
     $routes->post('/admin/master-dosen/update/(:num)', 'MasterDosen::update/$1', ['filter' => 'adminDanSuperAdminFilter']);
     $routes->get('/admin/master-dosen/tambah', 'MasterDosen::tambah', ['filter' => 'adminDanSuperAdminFilter']);
     $routes->post('/admin/master-dosen/simpan', 'MasterDosen::simpan', ['filter' => 'adminDanSuperAdminFilter']);
+    $routes->delete('/admin/master-dosen/hapus/(:num)', 'MasterDosen::hapus/$1', ['filter' => 'adminDanSuperAdminFilter']);
 // AKHIR DARI MASTER DATA DOSEN
 
 // ROUTE UNTUK PENGATURAN MASTER DOSEN

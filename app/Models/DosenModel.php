@@ -266,7 +266,32 @@ class DosenModel extends Model
             WHERE (peg_nip IS NULL AND peg_status != 'Tetap Non PNS')
             OR (peg_nip = '' AND peg_status != 'Tetap Non PNS')
             ORDER BY peg_nama ASC");
-        $result = $build->getResultArray();
+    $result = $build->getResultArray();
         return $result;
+    }
+
+    public function cekGambar($id = null)
+    {
+        $builder = $this->db->table('fip_dosen');
+        $builder->select('foto');
+        $builder->where('nidn', $id);
+        $result = $builder->get();
+        return $result->getRowArray();
+    }
+
+    public function cekPetaJalan($id = null)
+    {
+        $builder = $this->db->table('fip_dosen');
+        $builder->select('gambar_roadmap');
+        $builder->where('nidn', $id);
+        $result = $builder->get();
+        return $result->getRowArray();
+    }
+
+    public function deleteDosen($id = null)
+    {
+        $builder = $this->db->table('fip_dosen');
+        $builder->where('nidn', $id);
+        $builder->delete();
     }
 } 

@@ -391,4 +391,20 @@ class MasterDosen extends BaseController
         $this->dosenModel->update($nidn, $data);
         return redirect()->to('/master-dosen/pengaturan')->with('sukses','Data berhasil diubah!');
     }
+
+    public function hapus($id)
+    {
+        $cekGambar = $this->dosenModel->cekGambar($id);
+        $cekPetaJalan = $this->dosenModel->cekPetaJalan($id);
+
+
+        if($cekPetaJalan['gambar_roadmap'] != null){
+            unlink('upload/foto_dosen/'.$cekPetaJalan['gambar_roadmap']);
+        }
+        if($cekGambar['foto'] != null){
+            unlink('upload/foto_dosen/'.$cekGambar['foto']);
+        }
+        $this->dosenModel->deleteDosen($id);
+        return redirect()->to('/admin/master-dosen')->with('sukses','Data berhasil dihapus!');
+    }
 }

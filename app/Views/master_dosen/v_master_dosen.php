@@ -26,9 +26,9 @@
                                     <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>NIDN</th>
-                                                <th>Nama</th>
+                                                <th width="5%">No</th>
+                                                <th width="15%">NIDN</th>
+                                                <th width="20%">Nama</th>
                                                 <th>Departemen</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -42,8 +42,12 @@
                                                 <td><?= $sd['peg_gel_dep']; ?> <?= $sd['peg_nama']; ?> <?= $sd['peg_gel_bel']; ?></td>
                                                 <td>Pendidikan Non Formal</td>
                                                 <td>
-                                                    <a href="<?= base_url('/admin/master-dosen/detail/'.$sd['nidn']); ?>" class="btn btn-primary btn-sm"><i class="fa fa-file-text-o" style="margin-right: 5px;"></i>Detail</a>
-                                                    <a href="<?= base_url('/admin/master-dosen/edit/'.$sd['nidn']); ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit" style="margin-right: 5px;"></i>Edit</a>
+                                                    <form action="<?= base_url('/admin/master-dosen/hapus/'.$sd['nidn']); ?>" method="post" class="d-inline">
+                                                        <?= csrf_field(); ?>
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('yakin menu ini dihapus?')"><i class="fa fa-trash-o" style="margin-right: 5px;"></i>Hapus</button>
+                                                    </form>
+                                                    <a href="<?= base_url('/admin/master-dosen/edit/'.$sd['nidn']); ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit d-inline" style="margin-right: 5px;"></i>Edit</a>
                                                 </td>
                                             <?php $no++ ?> 
                                             </tr>

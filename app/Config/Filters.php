@@ -42,7 +42,7 @@ class Filters extends BaseConfig
             // 'honeypot',
             'csrf',
             'authFilter' => [
-                'except' => ['/','/auth/*','berita/*','/semua-berita','/semua-download','/semua-agenda','/download','/berita-beasiswa','/berita-prestasi','/berita-organisasi','/profil-ditmawa', '/struktur-organisasi','/unit-kegiatan','/panduan-bebas-ukt','/panduan-sib','/semua-download/*','/semua-prestasi','/halaman/*','/sdm/*']
+                'except' => ['/','/auth/*','berita/*','/semua-berita','/semua-pengumuman','/semua-download','/semua-agenda','/download','/berita-beasiswa','/berita-prestasi','/berita-organisasi','/profil-ditmawa', '/struktur-organisasi','/unit-kegiatan','/panduan-bebas-ukt','/panduan-sib','/semua-download/*','/semua-prestasi','/halaman/*','/sdm/*','/pendidikan-non-formal-s2']
             ],
             // 'invalidchars',
         ],
