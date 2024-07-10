@@ -417,7 +417,6 @@
                                 </div>
                             </div>
                         </div>
-                        <?= "<!-- End Single Item -->"; ?>
                         <?php } ?>
                     </div>
                 </div>
