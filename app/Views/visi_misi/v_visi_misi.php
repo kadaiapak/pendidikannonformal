@@ -41,6 +41,7 @@
 										<thead>
 											<tr class="headings">
 												<th class="column-title">No</th>
+												<th class="column-title">Type</th>
 												<th class="column-title">Nama</th>
 												<th class="column-title">Isi</th>
 												<th class="column-title no-link last"><span class="nobr">Aksi</span>
@@ -52,6 +53,7 @@
 											<?php foreach($visi_misi as $vm): ?>
 											<tr>
 												<td><?= $no; ?></td>
+												<td><?= $vm['type']; ?></td>
 												<td><?= $vm['pengaturan_nama']; ?></td>
 												<td><?= $vm['pengaturan_isi']; ?></td>
 												<td>

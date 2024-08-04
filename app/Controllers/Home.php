@@ -31,8 +31,8 @@ class Home extends BaseController
         $umumBerita = $this->beritaModel->getAllBeritaUmum($limit = 4);
         $pentingBerita = $this->beritaModel->getAllBeritaPenting();
         $pengumumanBerita = $this->beritaModel->getAllBeritaPengumuman($limit = 5);
-        $videoProfil = $this->videoProfilModel->getLastActive();
-        $visiMisi = $this->pengaturanModel->getVisiMisi();
+        $videoProfil = $this->videoProfilModel->getLastActive('s1');
+        $visiMisi = $this->pengaturanModel->getVisiMisi('s1');
         $headerPrestasi = $this->pengaturanModel->getHeaderPrestasi();
         $prestasi = $this->prestasiModel->getAll($limit = 4);
         $data = [
@@ -56,11 +56,16 @@ class Home extends BaseController
         ];
         $this->kunjunganModel->insert($data);
         $pengumumanBerita = $this->beritaModel->getAllBeritaPengumuman($limit = 5);
-        $visiMisi = $this->pengaturanModel->getVisiMisi();
+        $visiMisi = $this->pengaturanModel->getVisiMisi('s2');
+        $umumBerita = $this->beritaModel->getAllBeritaUmum($limit = 4);
+        $videoProfil = $this->videoProfilModel->getLastActive('s2');
+
         $data = [
             'judul' => 'Pendidikan Non Formal S2',
             'pengumuman_berita' => $pengumumanBerita,
+            'umum_berita' => $umumBerita,
             'visi_misi' => $visiMisi,
+            'video_profil' => $videoProfil,
         ];
 
         return view('home/v_home_s_dua', $data);

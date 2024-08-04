@@ -39,6 +39,7 @@
 										<thead>
 											<tr class="headings">
 												<th class="column-title">No </th>
+												<th class="column-title">Type</th>
 												<th class="column-title">Judul Video Profil</th>
 												<th class="column-title">Youtube Link</th>
 												<th class="column-title">Video</th>
@@ -53,6 +54,7 @@
 											<?php foreach($semua_video_profil as $svp): ?>
 											<tr>
 												<td class=" "><?= $no; ?></td>
+												<td class=" "><?= $svp['type']; ?></td>
 												<td class=" "><?= $svp['vp_judul']; ?></td>
 												<td class=" "><?= $svp['vp_youtube_link']; ?></td>
 												<td class=" "><iframe

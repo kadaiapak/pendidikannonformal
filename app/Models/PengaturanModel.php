@@ -16,11 +16,14 @@ class PengaturanModel extends Model
     'pengaturan_isi',
     ];
 
-    public function getVisiMisi()
+    public function getVisiMisi($type = null)
     {
         $builder = $this->db->table('pengaturan');
         $builder->select('*');
         $builder->where('pengaturan_sesi', 'visimisi');
+        if($type != null){
+        $builder->where('type', $type);
+        }
         $result = $builder->get();
         return $result->getResultArray();
     }

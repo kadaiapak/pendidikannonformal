@@ -90,6 +90,7 @@ class BeritaModel extends Model
         if($limit){
             $builder->limit($limit);
         }
+        $builder->orderBy('created_at', 'DESC');
         $result = $builder->get();
         return $result->getResultArray();
     }

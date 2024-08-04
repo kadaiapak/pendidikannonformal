@@ -49,12 +49,15 @@ class VideoProfilModel extends Model
         return $result->getResultArray();
     }
 
-    public function getLastActive()
+    public function getLastActive($type = null)
     {
         $builder = $this->db->table('video_profil');
         $builder->select('video_profil.*, user.nama_asli as nama_user');
         $builder->join('user', 'video_profil.vp_penulis = user.user_id');
         $builder->where('vp_is_active', 1);
+        if($type != null){
+            $builder->where('type', $type);
+        }
         $builder->orderBy('vp_id', 'ASC');
         $result = $builder->get();
         return $result->getRowArray();
